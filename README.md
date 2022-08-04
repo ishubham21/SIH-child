@@ -8,6 +8,12 @@ yarn format
 
 2. To run eslint, maintain code style
 ```sh
+yarn lint
+```
+
+If there's an error in step 2, try running - 
+```sh
+yarn lint:fix
 ```
 
 ## Setting up
