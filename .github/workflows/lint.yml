@@ -4,6 +4,8 @@ name: Run ES-Lint
 on:
   pull_request:
     branches: []
+  push:
+    branches: [ main ]
 
 jobs:
   lint:
