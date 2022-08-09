@@ -1,0 +1,50 @@
+import { useState } from 'react'
+
+import style from './Home.module.css'
+import planetImg from "../../assets/images/planet.png"
+import salyImg from "../../assets/images/Saly-1.png"
+
+const Calendar = () => {
+  const [date, changeDate] = useState(new Date());
+  return (
+    <div className={style.calendar}>
+      calendar
+    </div>
+  )
+}
+
+const CalButton = ({ text, type }) => {
+  return (
+    <button className={style.button}>
+      {text}
+    </button>
+  )
+}
+
+const Home = () => {
+  return (
+    <main>
+      <div className={style.title}>
+        <img src={planetImg} />
+        <h1>Hello Ben, good luck for the new day!</h1>
+      </div>
+      <div className={style.hero}>
+        <div className={style.card}>
+          <h2>Check today's </h2>
+          <h2>tasks:</h2>
+          <div className={style.cal_container}>
+            {/* buttons for cognitive & psychomotor */}
+            <div>
+              <CalButton text='Cognitive' type='cog' />
+              <CalButton text='Psychomotor' type='psy' />
+            </div>
+            <Calendar />
+          </div>
+        </div>
+        <img src={salyImg} />
+      </div>
+    </main>
+  )
+}
+
+export default Home

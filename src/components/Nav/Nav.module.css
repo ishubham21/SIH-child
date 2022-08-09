@@ -1,13 +1,15 @@
-.navbar {
+header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    padding: 30px 40px;
+    padding: 0 2rem;
+    margin: 5rem;
     font-size: 1.75rem;
 }
 
-.nav_links {
-    width: 30%;
+.link_group {
+    width: 25vw;
     display: flex;
     justify-content: space-between;
 }
@@ -16,9 +18,6 @@
     text-decoration: none;
     text-transform: uppercase;
     color: black;
-    padding: 12px;
+    padding: 1.25rem 1.75rem;
     border-radius: 10px;
-}
-.links:active {
-    background-color: #FFD348;
 }
