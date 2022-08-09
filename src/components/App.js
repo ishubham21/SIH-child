@@ -1,7 +1,18 @@
-import style from "./App.module.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import style from "./App.module.css"
+import Nav from "./Nav/Nav"
+import Home from "./Home/Home"
 
 const App = () => {
-  return <h1>hello</h1>;
-};
+  return (
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
 
 export default App;
