@@ -1,12 +1,12 @@
 main {
-    margin: 5rem 0;
+    overflow: hidden;
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 8rem auto;
+    margin: 6rem auto;
     flex-wrap: wrap;
 }
 .title h1 {

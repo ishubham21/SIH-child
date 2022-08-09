@@ -1,11 +1,11 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 
 import style from './Home.module.css'
 import planetImg from "../../assets/images/planet.png"
 import salyImg from "../../assets/images/Saly-1.png"
 
 const Calendar = () => {
-  const [date, changeDate] = useState(new Date());
+  //const [date, changeDate] = useState(new Date());
   return (
     <div className={style.calendar}>
       calendar
@@ -25,12 +25,12 @@ const Home = () => {
   return (
     <main>
       <div className={style.title}>
-        <img src={planetImg} />
+        <img src={planetImg} alt='planet'/>
         <h1>Hello Ben, good luck for the new day!</h1>
       </div>
       <div className={style.hero}>
         <div className={style.card}>
-          <h2>Check today's </h2>
+          <h2>Check today&apos;s </h2>
           <h2>tasks:</h2>
           <div className={style.cal_container}>
             {/* buttons for cognitive & psychomotor */}
@@ -41,7 +41,7 @@ const Home = () => {
             <Calendar />
           </div>
         </div>
-        <img src={salyImg} />
+        <img src={salyImg} alt='girl on a rocket' />
       </div>
     </main>
   )

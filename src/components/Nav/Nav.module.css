@@ -1,17 +1,12 @@
 header {
+    max-width: 80vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 0 2rem;
-    margin: 5rem;
+    padding: 5rem 2rem;
+    margin: auto;
     font-size: 1.75rem;
-}
-
-.link_group {
-    width: 25vw;
-    display: flex;
-    justify-content: space-between;
 }
 
 .links {
@@ -19,5 +14,9 @@ header {
     text-transform: uppercase;
     color: black;
     padding: 1.25rem 1.75rem;
+    margin: 0 1rem;
     border-radius: 10px;
+}
+.links:last-of-type {
+    margin-left: auto;
 }
