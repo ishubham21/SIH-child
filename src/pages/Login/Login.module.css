@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img{
+    height: min-content;
+    width: 100%;
+}
+.outerContainer{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
+}
+
+.mainContainer{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 45% 35%;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+    
+    padding: 20px;
+
+}
+.title{
+    position: relative;
+    min-width: 430px;
+    /* transform: translateX(-25%); */
+  
+}
+.title>img{
+    height: 550px;
+}
+.titleHeading{
+    font-family: 'Comic Neue', cursive;
+letter-spacing: 10px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    transform: translateX(2.5em);
+    font-size: 2.5em;
+}
+.formContainer{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+   width: 25rem;
+   height:33rem;
+    box-shadow: 0 5px 0 2px #e0e0e0;
+}
+
+.formContainer form{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    align-content: space-between;
+    padding: 20px;
+}
+.formContainer label{
+    display: block;
+   
+    margin: 10px 0;
+}
+.inputField{
+    display: block;
+    margin-top: 1.8rem;
+    margin-bottom:1.8rem;
+    /*margin: 10px 0;*/
+    width: 97%;
+    border: none;
+    outline: none;
+    background-color: #D2EBF1;  
+    padding: 10px; 
+    border-radius: 5px;
+    
+}
+.formHeading{
+    margin-top: 1rem;
+    text-align: center;
+    padding: 10px 0px;
+    
+}
+.loginBtnContainer{
+    margin-top: 2rem;
+    text-align: center;
+}
+.loginBtn{
+    font-size: 16px;
+    color: #FFFFFF;
+    display: inline-block;
+    background-color: #F9B957;
+    width: 100px ;
+    padding: 12px ;
+    margin-top: 4rem;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+}
+.loginBtn:hover{
+    cursor: pointer;
+    background-color: #F2B250;
+}

@@ -3,18 +3,17 @@
     "eslint:recommended",
     "plugin:import/errors",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
     "prettier"
   ],
   "plugins": [
     "react",
-    "jsx-a11y",
     "react-hooks",
     "import",
     "no-loops"
   ],
   "rules": {
+    "react/no-unescaped-entities": 0,
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "no-useless-escape": "off",
