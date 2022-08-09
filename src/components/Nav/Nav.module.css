@@ -1,0 +1,22 @@
+header {
+    max-width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5rem 2rem;
+    margin: auto;
+    font-size: 1.75rem;
+}
+
+.links {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    padding: 1.25rem 1.75rem;
+    margin: 0 1rem;
+    border-radius: 10px;
+}
+.links:last-of-type {
+    margin-left: auto;
+}
