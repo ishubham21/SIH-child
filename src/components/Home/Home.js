@@ -1,8 +1,6 @@
 //import { useState } from 'react'
 
 import style from './Home.module.css'
-import planetImg from "../../assets/images/planet.png"
-import salyImg from "../../assets/images/Saly-1.png"
 
 const Calendar = () => {
   //const [date, changeDate] = useState(new Date());
@@ -22,10 +20,17 @@ const CalButton = ({ text, type }) => {
 }
 
 const Home = () => {
+  const css = `
+    body {
+      background: linear-gradient(180deg, #FFFFFF 81.24%, #5D9CFB 81.25%);
+    }
+  `
+
   return (
-    <main>
+    <main className={style.main}>
+      <style>{css}</style>
       <div className={style.title}>
-        <img src={planetImg} alt='planet'/>
+        <img src={require("../../assets/images/planet.png")} alt='planet'/>
         <h1>Hello Ben, good luck for the new day!</h1>
       </div>
       <div className={style.hero}>
@@ -41,7 +46,7 @@ const Home = () => {
             <Calendar />
           </div>
         </div>
-        <img src={salyImg} alt='girl on a rocket' />
+        <img src={require("../../assets/images/Saly-1.png")} alt="girl on a rocket" />
       </div>
     </main>
   )
