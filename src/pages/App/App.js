@@ -14,14 +14,8 @@ const App = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route path="/login" element={<Login />} />
-      </Routes>
-      <Routes>
         <Route path="/coins" element={<Coins />} />
-      </Routes>
-      <Routes>
         <Route path="/cognitive" element={<Cognitive />} />
       </Routes>
     </BrowserRouter>
