@@ -6,6 +6,7 @@ import Nav from "../../components/Nav/Nav";
 import Login from "../Login/Login";
 import Home from "../Home/Home";
 import Coins from "../Coins/Coins";
+import Games from "../Games/Games";
 import Cognitive from "../Cognitive/Cognitive";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/coins" element={<Coins />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/cognitive" element={<Cognitive />} />
       </Routes>
     </BrowserRouter>

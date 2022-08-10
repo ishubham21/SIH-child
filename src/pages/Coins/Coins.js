@@ -19,7 +19,7 @@ const Coins = () => {
           alt="A boy"
         />
       </div>
-      
+
       <div className={style.section}>
         <h2>Congratulations! You&apos;ve got</h2>
         <div className={style.images}>
