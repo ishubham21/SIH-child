@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.section {
+    margin: 5rem;
+    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.section div {
+    width: 40%;
+}
+@media (max-width: 800px) {
+    .section div {
+        flex: 50%;
+    }
+}
+.section img {
+    width: 100%;
+}
+
+.card {
+    display: inline-block;
+    background: white;
+    box-shadow: 0px 4px 50px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+.card h2 {
+    color: #F9B957;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 5rem;
+}
+.card h3 {
+    color: #E85D1C;
+    font-size: 4rem;
+}
+.card button {
+    margin: 4rem 0;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5rem;
+
+    color: white;
+    background: #5D9CFB;
+}

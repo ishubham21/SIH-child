@@ -1,2 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
+html { 
+    font-size: 10px;
+}
 
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #FFFFFF 81.24%, #5D9CFB 81.25%);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5em;
+}

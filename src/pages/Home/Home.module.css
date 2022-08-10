@@ -17,6 +17,7 @@
 }
 .title img {
     height: 5rem;
+    width: auto;
     margin-right: 2rem;
 }
 
@@ -27,7 +28,9 @@
     flex-wrap: wrap;
 }
 .hero img {
-    max-width: 60vw;
+    height: 100%;
+    width: auto;
+    max-width: 80vw;;
     margin: auto -2rem;
     overflow: hidden;
     object-fit: contain;

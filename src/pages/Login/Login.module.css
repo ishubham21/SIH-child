@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 img{
     height: min-content;
     width: 100%;
@@ -16,15 +15,13 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
-    background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
 }
 
 .mainContainer{
     width: 90%;
     display: grid;
     grid-template-columns: 45% 35%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: start;
     position: relative;
     
@@ -39,6 +36,7 @@ img{
 }
 .title>img{
     height: 550px;
+    width: auto;
 }
 .titleHeading{
     font-family: 'Comic Neue', cursive;
