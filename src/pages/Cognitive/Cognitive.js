@@ -13,7 +13,9 @@ const TestCard = ({ level, quiz, startQuiz }) => {
       <div className={style.quiz}>
         <h3>Level {level.number}</h3>
         <br />
-        <p>Q{quiz.id}. {quiz.name}</p>
+        <p>
+          Q{quiz.id}. {quiz.name}
+        </p>
         <br />
         <form className={style.form}>
           {quiz.options.map((option) => (

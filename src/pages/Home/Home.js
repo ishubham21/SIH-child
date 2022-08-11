@@ -1,17 +1,32 @@
-//import { useState } from 'react'
+import { useState } from "react";
 
+import Calendar from "../../components/Calendar/Calendar";
 import style from "./Home.module.css";
 
-const Calendar = () => {
-  //const [date, changeDate] = useState(new Date());
-  return <div className={style.calendar}>calendar</div>;
-};
+const CalButton = ({ text, type, changeType }) => {
+  const selectType = (event) => {
+    if (event.target.value == "cog") {
+      changeType("cog");
+    } else {
+      changeType("psy");
+    }
+  };
 
-const CalButton = ({ text, type }) => {
-  return <button className={style.button}>{text}</button>;
+  return (
+    <button
+      className={style.button}
+      value={type}
+      onClick={selectType}
+    >
+      {text}
+    </button>
+  );
 };
 
 const Home = () => {
+  const [type, changeType] = useState("cog");
+  console.log(type);
+
   const css = `
     body {
       background: linear-gradient(180deg, #FFFFFF 81.24%, #5D9CFB 81.25%);
@@ -34,11 +49,19 @@ const Home = () => {
           <h2>tasks:</h2>
           <div className={style.cal_container}>
             {/* buttons for cognitive & psychomotor */}
-            <div>
-              <CalButton text="Cognitive" type="cog" />
-              <CalButton text="Psychomotor" type="psy" />
+            <div className={style.cal_buttons}>
+              <CalButton
+                text="Cognitive"
+                type="cog"
+                changeType={changeType}
+              />
+              <CalButton
+                text="Psychomotor"
+                type="psy"
+                changeType={changeType}
+              />
             </div>
-            <Calendar />
+            <Calendar type={type} />
           </div>
         </div>
         <img
