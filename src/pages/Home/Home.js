@@ -24,7 +24,7 @@ const CalButton = ({ text, type, changeType }) => {
 };
 
 const Home = () => {
-  const [type, changeType] = useState("cog");
+  const [type, changeType] = useState(null);
   console.log(type);
 
   const css = `
