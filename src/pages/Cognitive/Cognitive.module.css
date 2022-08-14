@@ -1,0 +1,96 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.section {
+    margin: 5rem;
+    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.section div {
+    width: 40%;
+}
+@media (max-width: 820px) {
+    .section div {
+        flex: 60%;
+    }
+}
+.section div:first-child {
+    width: 50%;
+}
+.section img {
+    width: 100%;
+}
+
+.card {
+    display: inline-block;
+    background: white;
+    box-shadow: 0px 4px 50px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+.card h2 {
+    color: #F9B957;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 5rem;
+}
+.card h3, .quiz h3 {
+    color: #E85D1C;
+    font-size: 4rem;
+}
+.card button {
+    cursor: pointer;
+    margin: 4rem 0;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5rem;
+
+    color: white;
+    background: #5D9CFB;
+}
+
+.quiz {
+    display: inline-block;
+    background: white;
+    box-shadow: 0px 4px 50px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+}
+.quiz p {
+    text-align: left;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+.form > * {
+    cursor: pointer;
+}
+.form label input {
+    margin-right: 1rem;
+    vertical-align: middle;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.form button {
+    align-self: flex-end;
+    margin-top: -1rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+
+    color: white;
+    background: #5D9CFB;
+}

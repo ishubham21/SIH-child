@@ -1,22 +1,26 @@
 header {
-    max-width: 80vw;
+    max-width: 90vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    padding: 5rem 2rem;
-    margin: auto;
+    margin: 5rem auto;
     font-size: 1.75rem;
 }
 
 .links {
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     color: black;
-    padding: 1.25rem 1.75rem;
-    margin: 0 1rem;
+    padding: 1.25rem 1.5rem;
     border-radius: 10px;
 }
 .links:last-of-type {
     margin-left: auto;
+}
+@media screen and (max-width: 480px) {
+    .links {
+        margin: auto;
+    }
 }

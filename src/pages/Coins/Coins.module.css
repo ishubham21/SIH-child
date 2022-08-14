@@ -1,0 +1,81 @@
+.main {
+    margin: 2rem;
+    padding: 2rem;
+    min-height: 70vh;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.title h2 {
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 500;
+}
+.boy {
+    max-width: 60vw;
+    height: auto;
+    margin: -4rem;
+    display: flex;
+    align-items: center;
+}
+
+.doodle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.doodle p {
+    color: #C66D32;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.coin {
+    color: #D65132;
+    font-size: 7rem;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+.images > * {
+    margin: auto 3rem;
+    max-width: 20vw;
+    height: auto;
+}
+
+.images:nth-of-type(1) {
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+}
+.images:nth-of-type(2) {
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+    .title h2 {
+        text-align: right;
+        font-size: 3.5rem;
+    }
+    .doodle p {
+        font-size: 4rem;
+    }
+    .doodle .images {
+        display: flex;
+        margin: -2rem auto;
+    }
+    .doodle .images:nth-of-type(2) {
+        display: none;
+    }
+    .boy {
+        margin-right: 4rem;
+    }
+}

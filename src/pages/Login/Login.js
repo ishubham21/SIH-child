@@ -1,11 +1,20 @@
-import style from "./Login.module.css"
+import style from "./Login.module.css";
 const Login = () => {
-return(
-  <div className={style.outerContainer}>
+
+  const css = `
+    body {
+      background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
+    }
+  `;
+
+  return (
+    <div className={style.outerContainer}>
+      <style>{css}</style>
+
       <div className={style.mainContainer}>
         <div className={style.titleContainer}>
           <img 
-            src={require("../../assests/titleImage.png")} 
+            src={require("../../assests/images/titleImage.png")} 
             alt="titleImage" 
             className={style.imgClass}
           />
@@ -14,7 +23,9 @@ return(
         <div className={style.bannerContainer}>
           
           <img
-            src={require("../../assests/banner.png")}
+
+            src={require("../../assets/images/Mask_Group_6.png")}
+
             alt="banner"
             className={style.imgClass}
           />
@@ -22,26 +33,19 @@ return(
         <div className={style.formContainer}>
           <h1 className={style.formHeading}>LOG IN</h1>
           <form>
-            <div className={style.inputLabel}>
-              <label>
-                NAME
-              </label>
-              <input
-                  type="text"
-                  name="name"
-                  className={style.inputField}
-                />
-            </div>
-            <div className={style.inputLabel}>
-              <label>
-                password
-              </label>
-              <input
-                  type="password"
-                  name="password"
-                  className={style.inputField}
-                />
-            </div>
+            <label>NAME</label>
+            <input
+              type="text"
+              name="name"
+              className={style.inputField}
+            />
+            <label>PARENT'S NAME</label>
+            <input
+              type="text"
+              name="parentName"
+              className={style.inputField}
+            />
+
 
             <div className={style.loginBtnContainer}>
               <button className={style.loginBtn}>Login</button>
@@ -50,7 +54,9 @@ return(
         </div>
       </div>
     </div>
-  
-);
-}
+
+  );
+};
+
 export default Login;
+
