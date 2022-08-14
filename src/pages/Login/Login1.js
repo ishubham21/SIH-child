@@ -6,7 +6,7 @@ function login(){
             <div className={style.mainContainer}>
                 <div className={style.titleContainer}>
                     <img 
-                        src={require("../../assests/titleImage.png")}
+                        src={require("../../assests/images/titleImage.png")}
                         alt="titleImage"
                         className={style.imgClass}
                     />
@@ -14,7 +14,7 @@ function login(){
                 </div>
                 <div className={style.bannerContainer}>
                     <img 
-                         src={require("../../assests/banner.png")}
+                         src={require("../../assests/images/banner.png")}
                         alt="banner"
                         className={style.imgClass}
                     />
@@ -25,7 +25,7 @@ function login(){
                     <div className={style.AvatarContainer}>
                         <div className={style.AvatarItem}>
                             <img 
-                                src={require("../../assests/avatar-boy.png")}
+                                src={require("../../assests/images/avatar-boy.png")}
                                 alt="male avatar"
                                 className={style.imgClass}
                             />
@@ -36,7 +36,7 @@ function login(){
 
                         <div className={style.AvatarItem}>
                             <img 
-                                src={require("../../assests/avatar-girl.png")}
+                                src={require("../../assests/images/avatar-girl.png")}
                                 alt="female avatar"
                                 className={style.imgClass}
                             />
