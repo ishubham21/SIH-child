@@ -1,4 +1,5 @@
 import style from "./Games.module.css";
+import { Link } from "react-router-dom";
 
 const Games = () => {
   const css = `
@@ -8,9 +9,31 @@ const Games = () => {
   `;
 
   return (
-    <div>
+    <main>
       <style>{css}</style>
-    </div>
+      <div className={style.gamegrid}>
+        <Link to={"2048"} className={style.game}>
+          <img src={require("../../assets/gamecovers/2048.png")} />
+          <h3>2048</h3>
+        </Link>
+        <Link to={"2048"} className={style.game}>
+          <img src={require("../../assets/gamecovers/2048.png")} />
+          <h3>2048</h3>
+        </Link>
+        <Link to={"2048"} className={style.game}>
+          <img src={require("../../assets/gamecovers/2048.png")} />
+          <h3>2048</h3>
+        </Link>
+        <Link to={"2048"} className={style.game}>
+          <img src={require("../../assets/gamecovers/2048.png")} />
+          <h3>2048</h3>
+        </Link>
+        <Link to={"2048"} className={style.game}>
+          <img src={require("../../assets/gamecovers/2048.png")} />
+          <h3>2048</h3>
+        </Link>
+      </div>
+    </main>
   );
 };
 

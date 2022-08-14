@@ -34,7 +34,7 @@
     color: #C66D32;
     text-transform: uppercase;
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .coin {
@@ -65,12 +65,15 @@
         text-align: right;
         font-size: 3.5rem;
     }
+    .coin {
+        font-size: 15vw;;
+    }
     .doodle p {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     .doodle .images {
         display: flex;
-        margin: -2rem auto;
+        margin: -3rem auto;
     }
     .doodle .images:nth-of-type(2) {
         display: none;

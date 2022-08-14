@@ -1,0 +1,33 @@
+.gamegrid {
+    margin: 4rem auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    row-gap: 3rem;
+    justify-content: space-around;
+}
+
+.game {
+    width: 60%;
+    height: auto;
+    justify-self: center;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+.game h3 {
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

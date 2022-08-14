@@ -10,7 +10,7 @@ const TestCard = ({ level, quiz, startQuiz }) => {
   if (quiz) {
     console.log("quiz started");
     return (
-      <div className={style.quiz}>
+      <div className={`${style.quiz} ${style.card}`}>
         <h3>Level {level.number}</h3>
         <br />
         <p>
@@ -74,7 +74,7 @@ const Cognitive = () => {
       <style>{css}</style>
       <div className={style.section}>
         <TestCard quiz={quiz} level={level} startQuiz={startQuiz} />
-        <div>
+        <div className={style.img}>
           <img
             src={require("../../assets/images/Saly-10.png")}
             alt="doodle"

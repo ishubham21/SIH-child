@@ -1,10 +1,10 @@
-
-img{
+.bannerContainer img,
+.titleContainer img {
     height: min-content;
-
     width: 100%;
 }
-.outerContainer{
+
+.outerContainer {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100vh;
@@ -13,7 +13,7 @@ img{
     align-items: center;
 }
 
-.mainContainer{
+.mainContainer {
     display: grid;
 
     grid-template-columns: 45% 35%;
@@ -26,18 +26,19 @@ img{
     padding: 20px;
     row-gap: 20px;
 }
-.titleContainer{
+
+.titleContainer {
     display: flex;
     /* width: 80%; */
 }
 
-.title>img{
+.title>img {
     height: 550px;
     width: auto;
 
 }
 
-.titleHeading{
+.titleHeading {
     font-family: 'Comic Neue', cursive;
     letter-spacing: 15px;
     text-transform: uppercase;
@@ -45,10 +46,12 @@ img{
     font-size: 2.5em;
     text-transform: uppercase;
 }
-.bannerContainer{
+
+.bannerContainer {
     position: relative;
 }
-.bannerContainer::before{
+
+.bannerContainer::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -57,7 +60,8 @@ img{
     background-color: #c6dbfb;
     border-radius: 50%;
 }
-.formContainer{
+
+.formContainer {
     background-color: white;
     padding: 20px 20px 0;
     border-radius: 10px;
@@ -65,65 +69,72 @@ img{
     box-shadow: 0 2px 0 1px #c6c6c6;
     grid-row: 1/span 2;
     grid-column: 2;
-    
+
 }
 
-.formContainer form{
+.formContainer form {
     display: grid;
     grid-template-rows: 25% 25% 25%;
     align-content: center;
     padding: 0 20px;
     min-height: 375px;
 }
-.formContainer label{
+
+.formContainer label {
     display: block;
     margin: 10px 0;
 }
-.inputField{
+
+.inputField {
     display: block;
     margin: 10px 0;
     width: 100%;
     border: none;
     outline: none;
-    background-color: #D2EBF1;  
-    padding: 10px; 
+    background-color: #D2EBF1;
+    padding: 10px;
     border-radius: 5px;
     font-size: 1em;
 }
-.formHeading{
+
+.formHeading {
     text-align: center;
     padding: 10px 0;
     text-transform: uppercase;
-    
+
 }
-.loginBtnContainer{
+
+.loginBtnContainer {
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.loginBtn{
+
+.loginBtn {
     display: inline-block;
     background-color: #F9B957;
-    width: 100px ;
-    padding: 10px ;
+    width: 100px;
+    padding: 10px;
     margin: auto;
     border: none;
     border-radius: 5px;
     font-size: 1em;
     color: white;
 }
-.loginBtn:hover{
+
+.loginBtn:hover {
     cursor: pointer;
     background-color: #F2B250;
 }
 
-.formText{
+.formText {
     text-transform: uppercase;
     font-size: 14px;
     text-align: center;
 }
-.AvatarContainer{
+
+.AvatarContainer {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -131,26 +142,29 @@ img{
     min-height: 350px;
 }
 
-.AvatarItem{
+.AvatarItem {
     width: 30%;
 }
-.AvatarItem >img{
+
+.AvatarItem>img {
     box-shadow: 0 2px 7px 1px gray;
     padding: 10px;
     margin: 15px 0;
 }
 
 @media screen and (max-width: 1000px) {
-    body{
+    body {
         font-size: 1.5em;
-        
+
     }
-    .outerContainer{
+
+    .outerContainer {
         /* overflow: hidden; */
         min-height: 700px;
-        background: linear-gradient(180deg,#5d9cfb 85%,#DEF1F8 86%);
+        background: linear-gradient(180deg, #5d9cfb 85%, #DEF1F8 86%);
     }
-    .mainContainer{
+
+    .mainContainer {
         min-width: 100%;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
@@ -161,168 +175,205 @@ img{
         row-gap: 40px;
         height: 90vh;
     }
-    .titleHeading{
+
+    .titleHeading {
         font-size: 1.7em;
     }
-    .bannerContainer{
+
+    .bannerContainer {
         width: 350px;
         margin: auto;
     }
-    .formContainer{
+
+    .formContainer {
         grid-row: 2;
         grid-column: 1;
         width: 400px;
         margin: auto;
         padding: 25px;
     }
-    .formContainer form{
+
+    .formContainer form {
         grid-template-rows: 25% 25% 10%;
         align-content: space-around;
         min-height: 350px;
     }
-    .formHeading{
+
+    .formHeading {
         padding: 0;
         font-size: 1.5em;
     }
-    .AvatarContainer{
+
+    .AvatarContainer {
         min-height: 300px;
     }
-   
+
     @media screen and (min-height: 1300px) {
-        body{
+        body {
             font-size: 1.8em;
-            
+
         }
-       .bannerContainer{
-        width: 400px;
-       }
-       .formContainer{
-        width: 450px;
-        
-       }
-       .formContainer form{
-        min-height: 400px;
-       }
-       
+
+        .bannerContainer {
+            width: 400px;
+        }
+
+        .formContainer {
+            width: 450px;
+
+        }
+
+        .formContainer form {
+            min-height: 400px;
+        }
+
     }
-   
+
 }
 
 @media screen and (max-width: 540px) {
-    body{
+    body {
         font-size: 1em;
     }
-    .outerContainer{
+
+    .outerContainer {
         height: 100vh;
         min-height: 600px;
         overflow: scroll;
     }
-    .mainContainer{
+
+    .mainContainer {
         /* max-width: 500px; */
         height: 90vh;
     }
-    .titleContainer{
+
+    .titleContainer {
         /* width: 200px; */
         margin: auto;
     }
-    .titleContainer>img{
+
+    .titleContainer>img {
         width: 50px;
     }
-    .titleHeading{
+
+    .titleHeading {
         letter-spacing: 10px;
         font-size: 1.4em;
     }
-    .formContainer{
+
+    .formContainer {
         min-width: 25px;
         width: 90%;
         margin: auto;
         padding: 10px 0;
-        
+
     }
-    .formHeading{
+
+    .formHeading {
         padding: 0;
         margin: 0;
     }
-    .formContainer form{
+
+    .formContainer form {
         min-height: 225px;
         grid-template-rows: auto auto auto;
         align-content: center;
         row-gap: 5px;
     }
-    .bannerContainer{
+
+    .bannerContainer {
         width: 200px;
     }
-    .inputField{
+
+    .inputField {
         padding: 5px;
     }
-    .loginBtn{
+
+    .loginBtn {
         padding: 7px 5px;
     }
-    .AvatarContainer{
+
+    .AvatarContainer {
         min-height: 200px;
         padding: 20px 0;
     }
-   @media screen and (min-height: 800px) {
-     body{
-        font-size: 1.2em;
-     }
-     .formContainer{
-        padding: 20px 0;
-        width: 90%;
-     }
-     .inputField{
-        padding: 7px;
-     }
-     .bannerContainer{
-        width: 300px;
-     }
-   }
-   
-   
+
+    @media screen and (min-height: 800px) {
+        body {
+            font-size: 1.2em;
+        }
+
+        .formContainer {
+            padding: 20px 0;
+            width: 90%;
+        }
+
+        .inputField {
+            padding: 7px;
+        }
+
+        .bannerContainer {
+            width: 300px;
+        }
+    }
+
+
 }
+
 @media (min-width: 600px) and (max-width: 1000px) and (orientation: landscape) {
-    body{
+    body {
         font-size: 1em;
     }
-    .outerContainer{
+
+    .outerContainer {
         min-height: fit-content;
     }
-    .mainContainer{
+
+    .mainContainer {
         grid-template-columns: 50% 30%;
         width: 100vw;
         justify-content: space-evenly;
     }
-    .formContainer{
+
+    .formContainer {
         grid-row: 1/span 2;
         grid-column: 2;
         width: 30%;
         min-width: 200px;
         padding: 10px 0;
     }
-    .formContainer form{
+
+    .formContainer form {
         min-height: 200px;
         grid-template-rows: auto auto auto;
     }
-    .inputField{
+
+    .inputField {
         padding: 5px;
     }
-    .AvatarContainer{
+
+    .AvatarContainer {
         min-height: 250px;
         padding: 20px 0;
     }
-    .loginBtn{
+
+    .loginBtn {
         padding: 7px 5px;
     }
-    .bannerContainer{
+
+    .bannerContainer {
         width: 50%;
     }
-    .titleContainer{
+
+    .titleContainer {
         width: 50%;
     }
-    .titleHeading{
+
+    .titleHeading {
         letter-spacing: 5px;
     }
-    .titleContainer>img{
+
+    .titleContainer>img {
         width: 50px;
     }
 }
