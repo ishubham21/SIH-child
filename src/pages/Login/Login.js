@@ -1,6 +1,5 @@
 import style from "./Login.module.css";
 const Login = () => {
-
   const css = `
     body {
       background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
@@ -13,19 +12,16 @@ const Login = () => {
 
       <div className={style.mainContainer}>
         <div className={style.titleContainer}>
-          <img 
-            src={require("../../assests/images/titleImage.png")} 
-            alt="titleImage" 
+          <img
+            src={require("../../assets/images/planet.png")}
+            alt="titleImage"
             className={style.imgClass}
           />
           <h1 className={style.titleHeading}> Something </h1>
         </div>
         <div className={style.bannerContainer}>
-          
           <img
-
             src={require("../../assets/images/Mask_Group_6.png")}
-
             alt="banner"
             className={style.imgClass}
           />
@@ -46,7 +42,6 @@ const Login = () => {
               className={style.inputField}
             />
 
-
             <div className={style.loginBtnContainer}>
               <button className={style.loginBtn}>Login</button>
             </div>
@@ -54,9 +49,7 @@ const Login = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
 export default Login;
-

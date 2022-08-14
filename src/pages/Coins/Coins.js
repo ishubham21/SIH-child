@@ -57,7 +57,6 @@ const Coins = () => {
           <p>Keep it up champ!</p>
         </div>
       </div>
-
     </main>
   );
 };
