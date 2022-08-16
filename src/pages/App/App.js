@@ -8,7 +8,7 @@ import Login1 from "../Login/Login1";
 import Home from "../Home/Home";
 import Coins from "../Coins/Coins";
 import Games from "../Games/Games";
-import Game2048 from "../Games/GameIframe";
+import GameIframe from "../Games/GameIframe";
 import Cognitive from "../Cognitive/Cognitive";
 import Calendar from "../../components/Calendar/Calendar";
 import Psychomotor from "../Psychomotor/Psychomotor";
@@ -28,6 +28,7 @@ const App = () => {
       "image": "SpellWizard.png"
     }
   ]
+
   return (
     <BrowserRouter>
       <Nav />
@@ -35,9 +36,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/coins" element={<Coins />} />
-        <Route path="/games" element={<Games gameList={gameList} />} />
-          <Route path="/games/2048" element={<Game2048 link={"https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P"} />} />
-          <Route path="/games/SpellWizard" element={<Game2048 link={"https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P"} />} />
+        <Route path="/games" element={<Games />} />
+          <Route path="/games/2048" element={<GameIframe link={"https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P"} />} />
+          <Route path="/games/SpellWizard" element={<GameIframe link={"https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P"} />} />
+          <Route path="/games/DunkShot" element={<GameIframe link={"https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P"} />} />
+          <Route path="/games/SlitSight" element={<GameIframe link={"https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P"} />} />
+          <Route path="/games/WordFinder" element={<GameIframe link={"https://www.gamezop.com/g/r1K-J3TQ5Ar?id=zv1Y2I8P"} />} />
+          <Route path="/games/TicTacToe" element={<GameIframe link={"https://www.gamezop.com/g/H1WmafkP9JQ?id=zv1Y2I8P"} />} />
         <Route path="/cognitive" element={<Cognitive />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/psychomotor" element={<Psychomotor />} />

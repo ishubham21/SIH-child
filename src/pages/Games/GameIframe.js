@@ -1,18 +1,16 @@
 import { useEffect } from "react"
 import style from "./Games.module.css"
 
-const Game2048 = ({ link }) => {
-  useEffect(() => {
-    const resizeIframe = () => {
-      const iframe = document.getElementsByClassName(style.iframe)
-      obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-    }
-  }, [])
-
-
+const GameIframe = ({ link }) => {
   const css = `
     main, #root {
       height: 100%;
+    }
+    body {
+      background: none;
+    }
+    header {
+      display: none;
     }`
 
   return (
@@ -31,4 +29,4 @@ const Game2048 = ({ link }) => {
   )
 }
 
-export default Game2048
+export default GameIframe
