@@ -36,8 +36,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/coins" element={<Coins />} />
         <Route path="/games" element={<Games gameList={gameList} />} />
-          <Route path="/games/2048" element={<Game2048 link={gameList["2048"]} />} />
-          <Route path="/games/SpellWizard" element={<Game2048 link={gameList["SpellWizard"]} />} />
+          <Route path="/games/2048" element={<Game2048 link={"https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P"} />} />
+          <Route path="/games/SpellWizard" element={<Game2048 link={"https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P"} />} />
         <Route path="/cognitive" element={<Cognitive />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/psychomotor" element={<Psychomotor />} />
