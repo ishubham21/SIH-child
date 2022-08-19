@@ -13,6 +13,7 @@
   "author": "ishubham21",
   "license": "ISC",
   "dependencies": {
+    "@parcel/service-worker": "^2.7.0",
     "classnames": "^2.3.1",
     "css": "^3.0.0",
     "react": "^18.2.0",
@@ -26,6 +27,8 @@
     "@babel/core": "^7.18.10",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/preset-env": "^7.18.10",
+    "@parcel/packager-raw-url": "^2.7.0",
+    "@parcel/transformer-webmanifest": "^2.7.0",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
