@@ -12,6 +12,9 @@ import GameIframe from "../Games/GameIframe";
 import Cognitive from "../Cognitive/Cognitive";
 import Calendar from "../../components/Calendar/Calendar";
 import Psychomotor from "../Psychomotor/Psychomotor";
+import YogaAI from "../YogaAI/YogaAI";
+import Stories from "../Stories/Stories"
+import Draw from "../Draw/Draw"
 
 const App = () => {
   const gameList = [
@@ -46,6 +49,9 @@ const App = () => {
         <Route path="/cognitive" element={<Cognitive />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/psychomotor" element={<Psychomotor />} />
+        <Route path="/yoga/:asana" element={<YogaAI />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/draw" element={<Draw />} />
       </Routes>
     </BrowserRouter>
   );

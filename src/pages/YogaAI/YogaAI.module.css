@@ -1,0 +1,62 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.section {
+    margin: 4rem;
+    max-width: 90vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+.section div {
+    min-width: 40%;
+}
+@media (max-width: 820px) {
+    .section div {
+        flex: 60%;
+    }
+}
+
+.demoasana, .testasana {
+    background-color: black;
+    max-width: 800px;
+    display: inline-block;
+    box-shadow: 0px 4px 50px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+}
+.demoasana img {
+    width: 100%;
+    border-radius: 10px;
+}
+.testasana h2 {
+    color: white;
+}
+.testasana button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+.label_container p {
+    font-size: 2rem;
+    color: white;
+}
+
+.canvas {
+    text-align: center;
+}
+.canvas > canvas {
+    height: 100%;
+    width: 100%;
+}
