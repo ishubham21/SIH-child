@@ -1,6 +1,6 @@
 import style from "./Login.module.css";
 
-function Login1() {
+function Dashboard() {
   const css = `
     body {
       background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
@@ -57,4 +57,4 @@ function Login1() {
   );
 }
 
-export default Login1;
+export default Dashboard;

@@ -4,7 +4,7 @@ import { useState } from "react";
 import style from "./App.module.css";
 import Nav from "../../components/Nav/Nav";
 import Login from "../Login/Login";
-import Login1 from "../Login/login1";
+import Dashboard from "../Login/Dashboard";
 import Home from "../Home/Home";
 import Coins from "../Coins/Coins";
 import Games from "../Games/Games";
@@ -37,7 +37,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login1" element={<Login1 />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/coins" element={<Coins />} />
         <Route path="/games" element={<Games />} />
         <Route
