@@ -3,7 +3,12 @@
     height: min-content;
     width: 100%;
 }
-
+/*.bannerContainer img,
+.titleContainer img, .AvatarItem Img {
+    height: min-content;
+    width: 100%;
+    box-sizing: border-box;
+}*/
 .outerContainer {
     font-family: 'Poppins', sans-serif;
     width: 100%;

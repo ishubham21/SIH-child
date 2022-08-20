@@ -21,7 +21,7 @@ const Login = () => {
         </div>
         <div className={style.bannerContainer}>
           <img
-            src={require("../../assets/images/Mask_Group_6.png")}
+            src={require("../../assets/images/banner.png")}
             alt="banner"
             className={style.imgClass}
           />
@@ -29,18 +29,22 @@ const Login = () => {
         <div className={style.formContainer}>
           <h1 className={style.formHeading}>LOG IN</h1>
           <form>
-            <label>NAME</label>
-            <input
-              type="text"
-              name="name"
-              className={style.inputField}
-            />
-            <label>PARENT'S NAME</label>
-            <input
-              type="text"
-              name="parentName"
-              className={style.inputField}
-            />
+            <div>
+              <label>NAME</label>
+              <input
+                type="text"
+                name="name"
+                className={style.inputField}
+              />
+            </div>
+            <div>
+              <label>PARENT'S NAME</label>
+              <input
+                type="text"
+                name="parentName"
+                className={style.inputField}
+              />
+            </div>
 
             <div className={style.loginBtnContainer}>
               <button className={style.loginBtn}>Login</button>
