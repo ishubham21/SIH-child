@@ -1,0 +1,65 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.section {
+    margin: 4rem;
+    max-width: 70vw;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+.section h1 {
+    color: #5D9CFB;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+}
+
+.stories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.story {
+    transition: all .2s ease-in-out;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+.story:hover {
+    transform: scale(1.05);
+}
+.story h3 {
+    color: #1D1C1A;
+    font-size: 2.5rem;
+}
+.story span {
+    font-size: 2rem;
+    color: gray;
+}
+.story p {
+    font-size: 2rem;
+}
+
+@media (max-width: 820px) {
+    .section {
+        max-width: 90vw;
+    }
+    .section h1 {
+        font-size: 2.5rem;
+    }
+    .story h3 {
+        font-size: 2rem;
+    }
+    .story span {
+        font-size: 1.25rem;
+    }
+    .story p {
+        font-size: 1.5rem;
+    }
+}

@@ -1,6 +1,4 @@
 import { useState } from "react";
-
-import Calendar from "../../components/Calendar/Calendar";
 import style from "./Home.module.css";
 
 const CalButton = ({ text, type, changeType }) => {
@@ -47,22 +45,7 @@ const Home = () => {
         <div className={style.card}>
           <h2>Check today&apos;s </h2>
           <h2>tasks:</h2>
-          <div className={style.cal_container}>
-            {/* buttons for cognitive & psychomotor */}
-            <div className={style.cal_buttons}>
-              <CalButton
-                text="Cognitive"
-                type="cog"
-                changeType={changeType}
-              />
-              <CalButton
-                text="Psychomotor"
-                type="psy"
-                changeType={changeType}
-              />
-            </div>
-            <Calendar type={type} />
-          </div>
+          <div className={style.taskList}></div>
         </div>
         <img
           src={require("../../assets/images/Saly-1.png")}

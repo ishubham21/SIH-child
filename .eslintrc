@@ -22,7 +22,7 @@
     "no-unused-vars": "warn",
     "no-alert": "error",
     "camelcase": "error",
-    "no-loops/no-loops": "error"
+    "no-loops/no-loops": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2022,

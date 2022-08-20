@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.section {
+    margin: 4rem;
+    max-width: 90vw;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.image {
+    padding: 2rem;
+    color: green;
+    height: 70vh;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 4px 50px 5px rgba(0, 0, 0, 0.25);
+    vertical-align: middle;
+}
+.image img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.capture span {
+    font-size: 2rem;
+}
