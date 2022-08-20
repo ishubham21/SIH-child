@@ -45,9 +45,7 @@ const Home = () => {
         <div className={style.card}>
           <h2>Check today&apos;s </h2>
           <h2>tasks:</h2>
-          <div className={style.taskList}>
-            
-          </div>
+          <div className={style.taskList}></div>
         </div>
         <img
           src={require("../../assets/images/Saly-1.png")}

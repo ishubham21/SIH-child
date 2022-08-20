@@ -1,17 +1,18 @@
-import style from './Draw.module.css'
+import style from "./Draw.module.css";
 
 const Draw = () => {
-  const supported = 'mediaDevices' in navigator;
+  const supported = "mediaDevices" in navigator;
   if (!supported) {
-    document.getElementsByClassName(style.capture).style = { display: 'hidden' }
-    console.log(document.getElementsByClassName(style.capture))
+    document.getElementsByClassName(style.capture).style = {
+      display: "hidden",
+    };
+    console.log(document.getElementsByClassName(style.capture));
   }
 
   const getImage = (event) => {
-    const file = event.target.value
-    console.log(file)
-  }
-
+    const file = event.target.value;
+    console.log(file);
+  };
 
   return (
     <main className={style.main}>
@@ -30,7 +31,7 @@ const Draw = () => {
         </div>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Draw
+export default Draw;
