@@ -1,3 +1,4 @@
+import { useState } from "react";
 import style from "./Login.module.css";
 const Login = () => {
   const css = `
@@ -5,7 +6,34 @@ const Login = () => {
       background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
     }
   `;
+  const [email, setEmail] = useState("");
+  const [pwd, setPwd] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("https://sih-backend-rtu-alpha.vercel.app/auth/child/login", {
+      method: "POST",
 
+      body: JSON.stringify({
+        "email": email,
+        "password": pwd
+      }),
+  
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(response => {
+      if(!response.error){
+        localStorage.setItem('childToken', response.data.token);
+        console.log(response.data.token);
+      }
+      else{
+        alert(response.error);
+      }
+      
+    })
+  };
   return (
     <div className={style.outerContainer}>
       <style>{css}</style>
@@ -28,27 +56,31 @@ const Login = () => {
         </div>
         <div className={style.formContainer}>
           <h1 className={style.formHeading}>LOG IN</h1>
-          <form>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <div>
-              <label>NAME</label>
+              <label>EMAIL</label>
               <input
-                type="text"
-                name="name"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className={style.inputField}
               />
             </div>
             <div>
-              <label>PARENT'S NAME</label>
+              <label>PASSWORD</label>
               <input
-                type="text"
-                name="parentName"
+                type="password"
+                required
+                value={pwd}
+                onChange={(e) => setPwd(e.target.value)}
                 className={style.inputField}
               />
             </div>
 
-            <div className={style.loginBtnContainer}>
+           
               <button className={style.loginBtn}>Login</button>
-            </div>
+            
           </form>
         </div>
       </div>
