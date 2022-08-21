@@ -1,17 +1,22 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import style from "./Games.module.css";
 
-const GameIframe = ({ link }) => {
+const GameIframe = () => {
   const css = `
-    main, #root {
-      height: 100%;
-    }
-    body {
-      background: none;
-    }
-    header {
-      display: none;
-    }`;
+    html, main, #root { height: 100%; }
+    body { background: none; }
+    header { display: none; }
+  `;
+  const game = useParams().game
+  const games = {
+    2048: "https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P",
+    SpellWizard: "https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P",
+    DunkShot: "https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P",
+    SlitSight: "https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P",
+    WordFinder: "https://www.gamezop.com/g/r1K-J3TQ5Ar?id=zv1Y2I8P",
+    TicTacToe: "https://www.gamezop.com/g/H1WmafkP9JQ?id=zv1Y2I8P",
+  }
 
   return (
     <main className={style.main}>
@@ -22,7 +27,7 @@ const GameIframe = ({ link }) => {
         allowFullScreen={true}
         frameBorder="0"
         className={style.iframe}
-        src={link}
+        src={games[game]}
       ></iframe>
     </main>
   );

@@ -1,7 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
+//import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import style from "./App.module.css";
+import config from "../../config";
+// import style from "./App.module.css";
 import Nav from "../../components/Nav/Nav";
 import Login from "../Login/Login";
 import Dashboard from "../Login/Dashboard";
@@ -15,92 +17,62 @@ import YogaAI from "../YogaAI/YogaAI";
 import Stories from "../Stories/Stories";
 import Draw from "../Draw/Draw";
 
+const NavLayout = () => (
+  <>
+    <Nav />
+    <Outlet />
+  </>
+);
+
+const PrivateRoutes = ({ childToken }) => {
+  if (childToken) {
+    return (
+      <Outlet />
+    )
+  } else {
+    return (
+      <Navigate to="/login" />
+    )
+  }
+  
+}
+
 const App = () => {
-  const gameList = [
-    {
-      name: "2048",
-      url: "2048",
-      link: "https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P",
-      image: "2048.png",
-    },
-    {
-      name: "Spell Wizard",
-      url: "SpellWizard",
-      link: "https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P",
-      image: "SpellWizard.png",
-    },
-  ];
+  localStorage.setItem('childToken', '2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c')
+  const [childToken, setToken] = useState(localStorage.getItem('childToken'))
+  const [data, setData] = useState(null)
+  console.log(childToken, data)
+
+  useEffect(() => {
+    fetch(`${config.baseUrl}/${config.dataUrl}/${childToken}`)
+    .then(response => response.json())
+    .then(data => {
+      data.error ? console.log(data.error) : setData(data.data)
+    })
+  },[])
 
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-        <Route path="/coins" element={<Coins />} />
-        <Route path="/games" element={<Games />} />
-        <Route
-          path="/games/2048"
-          element={
-            <GameIframe
-              link={"https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P"}
-            />
-          }
-        />
-        <Route
-          path="/games/SpellWizard"
-          element={
-            <GameIframe
-              link={"https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P"}
-            />
-          }
-        />
-        <Route
-          path="/games/DunkShot"
-          element={
-            <GameIframe
-              link={
-                "https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P"
-              }
-            />
-          }
-        />
-        <Route
-          path="/games/SlitSight"
-          element={
-            <GameIframe
-              link={
-                "https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P"
-              }
-            />
-          }
-        />
-        <Route
-          path="/games/WordFinder"
-          element={
-            <GameIframe
-              link={
-                "https://www.gamezop.com/g/r1K-J3TQ5Ar?id=zv1Y2I8P"
-              }
-            />
-          }
-        />
-        <Route
-          path="/games/TicTacToe"
-          element={
-            <GameIframe
-              link={
-                "https://www.gamezop.com/g/H1WmafkP9JQ?id=zv1Y2I8P"
-              }
-            />
-          }
-        />
-        <Route path="/cognitive" element={<Cognitive />} />
-        <Route path="/psychomotor" element={<Psychomotor />} />
-        <Route path="/yoga/:asana" element={<YogaAI />} />
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/draw" element={<Draw />} />
+        {/* Routes when logged in */}
+        <Route element={<PrivateRoutes childToken={childToken} />}>
+          <Route element={<NavLayout />}>
+            {/* Routes with Nav */}
+            <Route path="/" element={<Home />} />
+            <Route path="games" element={<Games />} />
+            <Route path="coins" element={<Coins />} />
+            <Route path="cognitive" element={<Cognitive />} />
+            <Route path="psychomotor" element={<Psychomotor />} />
+            <Route path="yoga/:asana" element={<YogaAI />} />
+            <Route path="stories" element={<Stories />} />
+            <Route path="draw" element={<Draw />} />
+          </Route>
+          {/* Routes without Nav */}
+          <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="games/:game" element={<GameIframe />} />
+        </Route>
+        {/* Routes when logged out */}
+        <Route path="login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

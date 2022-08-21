@@ -1,29 +1,9 @@
 import { useState } from "react";
 import style from "./Home.module.css";
 
-const CalButton = ({ text, type, changeType }) => {
-  const selectType = (event) => {
-    if (event.target.value == "cog") {
-      changeType("cog");
-    } else {
-      changeType("psy");
-    }
-  };
-
-  return (
-    <button
-      className={style.button}
-      value={type}
-      onClick={selectType}
-    >
-      {text}
-    </button>
-  );
-};
-
-const Home = () => {
-  const [type, changeType] = useState(null);
-  console.log(type);
+const Home = ({ name, taskList }) => {
+  const [tasks, changeTasks] = useState(taskList);
+  console.log(tasks);
 
   const css = `
     body {
@@ -45,7 +25,8 @@ const Home = () => {
         <div className={style.card}>
           <h2>Check today&apos;s </h2>
           <h2>tasks:</h2>
-          <div className={style.taskList}></div>
+          <div className={style.taskList}>
+          </div>
         </div>
         <img
           src={require("../../assets/images/Saly-1.png")}
