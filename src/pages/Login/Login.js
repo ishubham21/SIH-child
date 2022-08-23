@@ -10,29 +10,30 @@ const Login = () => {
   const [pwd, setPwd] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://sih-backend-rtu-alpha.vercel.app/auth/child/login", {
-      method: "POST",
+    fetch(
+      "https://sih-backend-rtu-alpha.vercel.app/auth/child/login",
+      {
+        method: "POST",
 
-      body: JSON.stringify({
-        "email": email,
-        "password": pwd
-      }),
-  
-      headers: {
-        "Content-type": "application/json"
-      }
-    })
-    .then(response => response.json())
-    .then(response => {
-      if(!response.error){
-        localStorage.setItem('childToken', response.data.token);
-        console.log(response.data.token);
-      }
-      else{
-        alert(response.error);
-      }
-      
-    })
+        body: JSON.stringify({
+          email: email,
+          password: pwd,
+        }),
+
+        headers: {
+          "Content-type": "application/json",
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        if (!response.error) {
+          localStorage.setItem("childToken", response.data.token);
+          console.log(response.data.token);
+        } else {
+          alert(response.error);
+        }
+      });
   };
   return (
     <div className={style.outerContainer}>
@@ -78,9 +79,7 @@ const Login = () => {
               />
             </div>
 
-           
-              <button className={style.loginBtn}>Login</button>
-            
+            <button className={style.loginBtn}>Login</button>
           </form>
         </div>
       </div>

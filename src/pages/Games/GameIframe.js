@@ -8,7 +8,7 @@ const GameIframe = () => {
     body { background: none; }
     header { display: none; }
   `;
-  const game = useParams().game
+  const game = useParams().game;
   const games = {
     2048: "https://www.gamezop.com/g/NyM_JGWcx?id=zv1Y2I8P",
     SpellWizard: "https://www.gamezop.com/g/zMxz8LNrp?id=zv1Y2I8P",
@@ -16,7 +16,7 @@ const GameIframe = () => {
     SlitSight: "https://www.gamezop.com/g/S1Ne12TQqCH?id=zv1Y2I8P",
     WordFinder: "https://www.gamezop.com/g/r1K-J3TQ5Ar?id=zv1Y2I8P",
     TicTacToe: "https://www.gamezop.com/g/H1WmafkP9JQ?id=zv1Y2I8P",
-  }
+  };
 
   return (
     <main className={style.main}>

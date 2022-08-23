@@ -20,7 +20,7 @@
     "no-undef": "off",
     "no-console": "warn",
     "no-unused-vars": "warn",
-    "no-alert": "error",
+    "no-alert": "warn",
     "camelcase": "error",
     "no-loops/no-loops": "off"
   },

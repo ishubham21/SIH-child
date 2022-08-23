@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 //import { useState } from "react";
 import { useEffect, useState } from "react";
 
@@ -26,30 +32,30 @@ const NavLayout = () => (
 
 const PrivateRoutes = ({ childToken }) => {
   if (childToken) {
-    return (
-      <Outlet />
-    )
+    return <Outlet />;
   } else {
-    return (
-      <Navigate to="/login" />
-    )
+    return <Navigate to="/login" />;
   }
-  
-}
+};
 
 const App = () => {
-  localStorage.setItem('childToken', '2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c')
-  const [childToken, setToken] = useState(localStorage.getItem('childToken'))
-  const [data, setData] = useState(null)
-  console.log(childToken, data)
+  localStorage.setItem(
+    "childToken",
+    "2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c",
+  );
+  const [childToken, setToken] = useState(
+    localStorage.getItem("childToken"),
+  );
+  const [data, setData] = useState(null);
+  console.log(childToken, data);
 
   useEffect(() => {
     fetch(`${config.baseUrl}/${config.dataUrl}/${childToken}`)
-    .then(response => response.json())
-    .then(data => {
-      data.error ? console.log(data.error) : setData(data.data)
-    })
-  },[])
+      .then((response) => response.json())
+      .then((data) => {
+        data.error ? console.log(data.error) : setData(data.data);
+      });
+  }, []);
 
   return (
     <BrowserRouter>
