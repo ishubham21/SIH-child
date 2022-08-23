@@ -1,9 +1,9 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "Child Application",
+    "name": "Create Child Application",
     "icons": [
         {
-          "src": "./assets/images/icon.png",
+          "src": "./assets/images/sumedha.png",
           "type": "image/png",
           "sizes": "512x512"
         }
