@@ -9,7 +9,7 @@ const Games = () => {
   `;
 
   return (
-    <main>
+    <main className={style.main}>
       <style>{css}</style>
       <div className={style.gamegrid}>
         <Link to={"2048"} className={style.game}>

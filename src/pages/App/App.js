@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from "react-router-dom";
 //import { useState } from "react";
 import { useEffect, useState } from "react";
 
@@ -23,6 +17,8 @@ import YogaAI from "../YogaAI/YogaAI";
 import Stories from "../Stories/Stories";
 import Draw from "../Draw/Draw";
 
+import { ChildProvider } from "../../context/childContext";
+
 const NavLayout = () => (
   <>
     <Nav />
@@ -30,57 +26,57 @@ const NavLayout = () => (
   </>
 );
 
-const PrivateRoutes = ({ childToken }) => {
-  if (childToken) {
-    return <Outlet />;
+const PrivateRoutes = ({ token }) => {
+  if (token) {
+    return (
+      <Outlet />
+    )
   } else {
     return <Navigate to="/login" />;
   }
-};
+  
+}
 
 const App = () => {
-  localStorage.setItem(
-    "childToken",
-    "2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c",
-  );
-  const [childToken, setToken] = useState(
-    localStorage.getItem("childToken"),
-  );
-  const [data, setData] = useState(null);
-  console.log(childToken, data);
+  localStorage.setItem('token', '2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c')
+  const [token, setToken] = useState(localStorage.getItem('token'))
+  const [data, setData] = useState(null)
+  console.log(token, data)
 
-  useEffect(() => {
-    fetch(`${config.baseUrl}/${config.dataUrl}/${childToken}`)
-      .then((response) => response.json())
-      .then((data) => {
-        data.error ? console.log(data.error) : setData(data.data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${config.baseUrl}/${config.dataUrl}/${token}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       data.error ? console.log(data.error) : setData(data.data)
+  //     })
+  // }, [])
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Routes when logged in */}
-        <Route element={<PrivateRoutes childToken={childToken} />}>
-          <Route element={<NavLayout />}>
+    <ChildProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Routes when logged out */}
+          <Route path="login" element={<Login />} />
+          {/* Routes when logged in */}
+          <Route element={<PrivateRoutes token={token} />}>
+            {/* Routes without Nav */}
+            <Route path="/" element={<Dashboard />} />
+            <Route path="games/:game" element={<GameIframe />} />
             {/* Routes with Nav */}
-            <Route path="/" element={<Home />} />
-            <Route path="games" element={<Games />} />
-            <Route path="coins" element={<Coins />} />
-            <Route path="cognitive" element={<Cognitive />} />
-            <Route path="psychomotor" element={<Psychomotor />} />
-            <Route path="yoga/:asana" element={<YogaAI />} />
-            <Route path="stories" element={<Stories />} />
-            <Route path="draw" element={<Draw />} />
+            <Route element={<NavLayout />}>
+              <Route path="child" element={<Home />} />
+              <Route path="games" element={<Games />} />
+              <Route path="coins" element={<Coins />} />
+              <Route path="cognitive/:cognitiveTaskId" element={<Cognitive />} />
+              <Route path="psychomotor" element={<Psychomotor />} />
+              <Route path="yoga/:yogaId" element={<YogaAI />} />
+              <Route path="stories" element={<Stories />} />
+              <Route path="draw" element={<Draw />} />
+            </Route>
           </Route>
-          {/* Routes without Nav */}
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="games/:game" element={<GameIframe />} />
-        </Route>
-        {/* Routes when logged out */}
-        <Route path="login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </ChildProvider>
   );
 };
 

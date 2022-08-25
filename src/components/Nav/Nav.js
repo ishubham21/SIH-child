@@ -7,7 +7,7 @@ const Nav = () => {
   return (
     <header>
       <style>{css}</style>
-      <NavLink to="/" className={style.links}>
+      <NavLink to="/child" className={style.links}>
         Home
       </NavLink>
       <NavLink to="/games" className={style.links}>
@@ -16,7 +16,7 @@ const Nav = () => {
       <NavLink to="/coins" className={style.links}>
         Coins
       </NavLink>
-      <NavLink to="/profile" className={style.links}>
+      <NavLink to="/" className={style.links}>
         Profile
       </NavLink>
     </header>
