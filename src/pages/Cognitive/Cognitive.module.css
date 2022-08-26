@@ -39,12 +39,11 @@
 }
 .card h2 {
     color: #F9B957;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .card h3, .quiz h3 {
     color: #E85D1C;
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 .card button {
     cursor: pointer;
@@ -56,6 +55,9 @@
 
     color: white;
     background: #5D9CFB;
+}
+.form button {
+    margin: 0;
 }
 
 .quiz p {
@@ -99,4 +101,17 @@
     .card h3 {
         font-size: 10vw;
     }
+}
+
+.quiz.card {
+    min-width: 75vw;
+}
+.quiz.card h3 {
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+.quiz.card p {
+    font-weight: bold;
+    font-size: 1.75rem;
+    padding-bottom: 2rem;
 }

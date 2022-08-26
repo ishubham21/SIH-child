@@ -1,12 +1,14 @@
 import { data } from "@tensorflow/tfjs";
 import { useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader"
+import { useNavigate } from "react-router-dom";
 
 import config from "../../config";
 import style from "./Login.module.css";
 
 function Dashboard() {
   const [children, setChildren] = useState(null)
+  const navigate = useNavigate()
 
   const css = `body {
     background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
@@ -39,11 +41,10 @@ function Dashboard() {
         <div className={style.mainContainer}>
           <div className={style.titleContainer}>
             <img
-              src={require("../../assets/images/planet.png")}
+              src={require("../../assets/images/sumedha_white.png")}
               alt="titleImage"
               className={style.imgClass}
             />
-            <h1 className={style.titleHeading}>Something</h1>
           </div>
           <div className={style.bannerContainer}>
             <img
@@ -76,7 +77,7 @@ function Dashboard() {
                 </div>
               ))} */}
 
-              <div className={style.AvatarItem}>
+              <div className={style.AvatarItem} onClick={() => {navigate("/child")}}>
                 <img
                   src={require("../../assets/images/avatar-boy.png")}
                   alt="male avatar"
@@ -87,7 +88,7 @@ function Dashboard() {
                 </div>
               </div>
 
-              <div className={style.AvatarItem}>
+              <div className={style.AvatarItem} onClick={() => {navigate("/child")}}>
                 <img
                   src={require("../../assets/images/avatar-girl.png")}
                   alt="female avatar"

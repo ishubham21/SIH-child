@@ -38,8 +38,18 @@
 .testasana h2 {
     color: white;
 }
-.testasana button {
+.startBtn {
     background-color: #5D9CFB;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+.submitBtn {
+    background-color: #42b33c;
     color: white;
     border: none;
     border-radius: 10px;

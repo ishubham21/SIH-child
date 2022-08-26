@@ -36,6 +36,9 @@
     display: flex;
     /* width: 80%; */
 }
+.titleContainer img {
+    max-width: 35rem;
+}
 
 .title>img {
     height: 550px;
@@ -149,12 +152,16 @@
 
 .AvatarItem {
     width: 30%;
+    box-shadow: 0 2px 7px 1px rgb(186, 186, 186);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 35%;
 }
 
 .AvatarItem>img {
-    box-shadow: 0 2px 7px 1px gray;
     padding: 10px;
     margin: 15px 0;
+    width: 100%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -167,6 +174,10 @@
         /* overflow: hidden; */
         min-height: 700px;
         background: linear-gradient(180deg, #5d9cfb 85%, #DEF1F8 86%);
+    }
+    .titleContainer {
+        width: 60vw;
+        min-height: 5rem;
     }
 
     .mainContainer {
@@ -255,10 +266,6 @@
     .titleContainer {
         /* width: 200px; */
         margin: auto;
-    }
-
-    .titleContainer>img {
-        width: 50px;
     }
 
     .titleHeading {
