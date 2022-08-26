@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import ChildContext from "../../context/childContext";
 
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate()
+  const [token, setToken] = useState(localStorage.getItem('token'))
   const { child, updateChild } = useContext(ChildContext)
   //const [data, setData] = useState({});
 
@@ -58,7 +59,7 @@ const Home = () => {
                   <p>Cognitive</p>
                 </div>
               ))}
-              {child.assignedYogaOnChild.map((task, i) => (
+              {child.availableYogaOnChild.map((task, i) => (
                 <div className={style.task}  key={i} onClick={() => navigate(`/yoga/${task.yogaId}`)}>
                   <h3>{task.yoga.name}</h3>
                   <p>Yoga</p>

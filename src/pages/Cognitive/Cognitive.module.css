@@ -41,10 +41,25 @@
     color: #F9B957;
     font-size: 4rem;
 }
-.card h3, .quiz h3 {
-    color: #E85D1C;
+
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.questionCount {
+    font-size: 1.5rem;
+}
+
+.questionText {
+    color: #000000;
     font-size: 2.5rem;
 }
+.scoreSection {
+    font-size: 3rem;
+}
+
 .card button {
     cursor: pointer;
     margin: 4rem 0;
@@ -66,7 +81,6 @@
 
 .form {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
 }

@@ -38,7 +38,7 @@ const PrivateRoutes = ({ token }) => {
 }
 
 const App = () => {
-  localStorage.setItem('token', '2b9d4ffc-71d9-4f57-9b4c-9a3c2be6eb2c')
+  localStorage.setItem('token', '6433c8d5-5c67-4880-b888-65bc1a5d37a4')
   const [token, setToken] = useState(localStorage.getItem('token'))
   const [data, setData] = useState(null)
   console.log(token, data)

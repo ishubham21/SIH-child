@@ -3,58 +3,47 @@ import { useParams } from "react-router-dom";
 import ChildContext from "../../context/childContext";
 import style from "./Cognitive.module.css";
 
-const TestCard = ({taskData: {task} }) => {
-  const [question, setQuestion] = useState(null)
-  console.log(task)
-  let score = 0
-  const submitTask = () => {
-    return;
-  };
+const TestCard = ({ taskData: { task }, childId }) => {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+  const [score, setScore] = useState(0);
 
-  // if quiz exists
-  if (question !== null) {
-    return (
-      <div className={style.card}>
-        <h2>Cognitive</h2>
-        <h3>{task.name}</h3>
-        <button onClick={() => setQuestion(0)}>Start</button>
-        <p>{task.description}</p>
-      </div>
-    );
-  } else if (question < task.questions.length) {
-    return (
-      <div className={`${style.quiz} ${style.card}`}>
-        <h3>{task.name}</h3>
-        <br />
-        <p>
-          Q{question}. {task.questions[0].questionText}
-        </p>
-        <br />
-        <form className={style.form}>
-          {task.questions[0].answerOptions.map((option, i) => (
-            <label key={i}>
-              <input type="radio" value={option.answerText} name={task.id} />
-              {option.answerText}
-            </label>
-          ))}
-          <button onClick={() => setQuestion(question+1)}>Next</button>
-        </form>
-      </div>
-    );
-  } else if (question === task.questions.length) {
-    // submit quiz score
-    submitTask(id)
-    // quiz completed
-    return (
-      <div className={style.card}>
-        <h2>Great Job!</h2>
-        <h3>Score: {score}/4</h3>
-        <button onClick={() => setQuestion(0)}>Start</button>
-        <p>{task.description}</p>
-      </div>
-    )
+  const handleAnswerOptionClick = (isCorrect) => {
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < task.questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+    };
   }
-};
+  return (
+    <div className={style.app}>
+      {showScore ? (
+        <div className={style.scoreSection}>
+          You scored {score} out of {task.questions.length}
+        </div>
+      ) : (
+        <>
+          <div className='question-section'>
+            <div className={style.questionCount}>
+              <span>Question {currentQuestion + 1}</span>/{task.questions.length}
+            </div>
+            <div className={style.questionText}>{task.questions[currentQuestion].questionText}</div>
+          </div>
+          <div className={style.form}>
+            {task.questions[currentQuestion].answerOptions.map((answerOption) => (
+              <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
 
 const Cognitive = () => {
   const { child, updateChild } = useContext(ChildContext)
@@ -68,7 +57,7 @@ const Cognitive = () => {
 
   const taskData = child.assignedCognitiveOnChild.filter(task => {
     console.log(task.cognitiveTaskId, id)
-    if(task.cognitiveTaskId === parseInt(id)) {
+    if (task.cognitiveTaskId === parseInt(id)) {
       return task
     }
   })[0]
@@ -78,7 +67,7 @@ const Cognitive = () => {
     <main className={style.main}>
       <style>{css}</style>
       <div className={style.section}>
-        <TestCard taskData={taskData} />
+        <TestCard taskData={taskData} childId={taskData.childId} />
         {/* <div className={style.img}>
           <img
             src={require("../../assets/images/Saly-10.png")}

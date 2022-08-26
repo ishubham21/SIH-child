@@ -14,22 +14,22 @@ function Dashboard() {
     background: linear-gradient(180deg,#5d9cfb 72.14%,#DEF1F8 72.15%);
   }`;
 
-  // useEffect(() => {
-  //   fetch(`${config.baseUrl}/${config.authUrl}/dashboard`, {
-  //     method: "GET",
-  //     headers: {
-  //       "child-token": localStorage.getItem("token")
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(response => {
-  //       if (response.error) {
-  //         console.log(response.error)
-  //       } else {
-  //         setChildren(response.data)
-  //       }
-  //     })
-  // })
+  useEffect(() => {
+    fetch(`${config.baseUrl}/${config.authUrl}/dashboard`, {
+      method: "GET",
+      headers: {
+        "child-token": localStorage.getItem("token")
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.error) {
+          console.log(response.error)
+        } else {
+          setChildren(response.data)
+        }
+      })
+  })
   if (children) {
     return (
       <Loader />
