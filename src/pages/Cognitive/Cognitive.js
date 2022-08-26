@@ -35,8 +35,8 @@ const TestCard = ({ taskData: { task }, childId }) => {
             <div className={style.questionText}>{task.questions[currentQuestion].questionText}</div>
           </div>
           <div className={style.form}>
-            {task.questions[currentQuestion].answerOptions.map((answerOption) => (
-              <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+            {task.questions[currentQuestion].answerOptions.map((answerOption, i) => (
+              <button key={i} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
             ))}
           </div>
         </>
